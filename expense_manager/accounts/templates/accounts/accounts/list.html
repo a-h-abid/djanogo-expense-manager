@@ -1,0 +1,24 @@
+{% extends "frontend/layout.html" %}
+
+{% block title %}
+    Accounts List
+{% endblock %}
+
+{% block content %}
+    <h2>Accounts List</h2>
+    
+    <div class="btn-group">
+        <a href="{% url 'accounts:create' %}">Create New Account</a>
+    </div>
+    
+    {% if accounts %}
+        <ul>
+        {% for account in accounts %}
+            <li><a href="{% url 'accounts:detail' account.id %}">{{ account.name }}</a></li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No records are available.</p>
+    {% endif %}
+    
+{% endblock %}

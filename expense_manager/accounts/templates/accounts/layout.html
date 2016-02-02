@@ -1,0 +1,21 @@
+{% extends "frontend/layout.html" %}
+
+{% block module_header %}
+<h2><strong>Account</strong> : {{ account.name }}</h2>
+
+<nav>
+    <ul>
+        <li><a href="{% url 'accounts:detail' account.id %}">Account Details</a></li>
+        <li><a href="{% url 'accounts:edit' account.id %}">Edit Account</a></li>
+        <li>
+            <strong>Transactions</strong>
+            <ul>
+                <li><a href="{% url 'accounts:list_transaction' account.id %}">List Transactions</a></li>
+                <li><a href="{% url 'accounts:add_transaction' account.id %}">Add Transactions</a></li>
+            </ul>
+        </li>
+    </ul>
+</nav>
+{% endblock %}
+
+{% block content %}{% endblock %}

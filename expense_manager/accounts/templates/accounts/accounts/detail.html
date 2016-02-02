@@ -1,0 +1,15 @@
+{% extends "accounts/layout.html" %}
+
+{% block title %}
+    Account Details : {{ account.name }}
+{% endblock %}
+
+
+{% block content %}
+    <h1>Account Details Page</h1>
+    
+    <dl>
+        <dt>Total Balance :</dt>
+            <dd>{{ balance_format }}</dd>
+    </dl>
+{% endblock %}

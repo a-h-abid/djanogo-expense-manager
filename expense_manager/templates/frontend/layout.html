@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>{% block title %}Home{% endblock %} - Expense Manager</title>
+    <meta charset="utf-8" />
+    {% load staticfiles %}
+</head>
+
+<body>
+    
+    <header>
+        <h1>Expense Manager <small> - A sample app</small></h1>
+    </header>
+    
+    <div id="navbar">
+        <ul>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'accounts:index' %}">Accounts</a></li>
+        </ul>
+    </div>
+
+    {% block module_header %}{% endblock %}
+
+    <div id="content">
+        {% block content %} Blank {% endblock %}
+    </div>
+    
+    <footer>
+        Sample App Created by Ahmedul Haque Abid
+    </footer>
+    
+</body>
+</html>
