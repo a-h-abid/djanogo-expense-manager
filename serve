@@ -1,4 +1,4 @@
 #! /bin/bash
 
-cd expense_manager
+cd ~/workspace/expense_manager
 python3 manage.py runserver $IP:$PORT
