@@ -15,10 +15,13 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
+from django.core.urlresolvers import reverse_lazy
 from expense_manager import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^accounts/', include('accounts.urls')),
+    url(r'^login/$', 'django.contrib.auth.views.login', {'template_name': 'frontend/home/home.html'}, name='login'),
+    url(r'^logout/$', 'django.contrib.auth.views.logout', {'next_page': reverse_lazy('home')}, name='logout'),
     url(r'^$', views.home, name='home')
 ]

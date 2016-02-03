@@ -3,4 +3,5 @@ from django.http import HttpResponse
 
 
 def home(request):
-    return HttpResponse("Home Page Baby")
+    return render(request, 'frontend/home/home.html')
+    
