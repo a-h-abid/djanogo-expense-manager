@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from .models import Account, Transaction
-
+from .repositories.account import Account as AccountRepo 
 
 def index(request):
     accounts = Account.objects.filter(id=1)
@@ -22,9 +22,12 @@ def edit(request, account_id):
     
 def detail(request, account_id):
     account = Account.objects.get(id=account_id)
+    #acc = AccountRepo()
+    #account = acc.get(id=account_id)
+    account.balance = 30000
     context = {
         'account': account,
-        'balance_format' : account.currency + ' ' + '30000'
+        'balance_format' : account.currency + ' ' + str(account.balance)
     }
     return render(request, 'accounts/accounts/detail.html', context)
     

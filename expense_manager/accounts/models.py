@@ -12,6 +12,7 @@ class Account(models.Model):
     def __str__(self):
         return self.name
     
+    
 class Transaction(models.Model):
     TRANSACTION_TYPE = (
         ('I','Income'),   
