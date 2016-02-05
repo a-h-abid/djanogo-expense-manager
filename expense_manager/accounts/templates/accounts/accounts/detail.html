@@ -9,7 +9,11 @@
     <h3>Account Details : {{ account.name }}</h3>
     
     <dl>
+        <dt>Starting Amount :</dt>
+            <dd>{{ starting_amount_format }}</dd>
+        
         <dt>Total Balance :</dt>
             <dd>{{ balance_format }}</dd>
     </dl>
+    
 {% endblock %}

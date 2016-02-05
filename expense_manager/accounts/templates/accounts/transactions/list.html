@@ -1,5 +1,31 @@
 {% extends "accounts/layout.html" %}
 
 {% block content %}
-    <h1>Account Transaction List</h1>
+    <h3>Transaction List</h3>
+    
+    {% if account.transactions.count > 0 %}
+    <table>
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Type</th>
+                <th>Amount</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for transaction in account.transactions %}
+            <tr>
+                <td>{{ transaction.created_on | date:"F" }}</td>
+                <td>{{ transaction.type_format }}</td>
+                <td>{{ account.currency }} {{ transaction.amount }}</td>
+                <td>{{ transaction.description }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    
+    
+    {% endif %}
 {% endblock %}
