@@ -7,8 +7,8 @@
     <p>Welcome, {{ user.username }}</p>
     {% else %}
     <p>Please Login to App.</p>
-    
-    <form action=""{% url "login" %}" method="post">
+        
+    <form action="{% url "login" %}" method="post">
         
         {% csrf_token %}
         

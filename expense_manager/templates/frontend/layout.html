@@ -25,7 +25,17 @@
     {% block module_header %}{% endblock %}
 
     <div id="content">
+        
+        {% if messages %}
+        <ul class="alert messages">
+            {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        
         {% block content %} Blank {% endblock %}
+
     </div>
     
     <footer>

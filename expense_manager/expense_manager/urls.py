@@ -21,7 +21,7 @@ from expense_manager import views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^accounts/', include('accounts.urls')),
-    url(r'^login/$', 'django.contrib.auth.views.login', {'template_name': 'frontend/home/home.html'}, name='login'),
-    url(r'^logout/$', 'django.contrib.auth.views.logout', {'next_page': reverse_lazy('home')}, name='logout'),
+    url(r'^login/$', views.app_login, name='login'),
+    url(r'^logout/$', views.app_logout, name='logout'),
     url(r'^$', views.home, name='home')
 ]
