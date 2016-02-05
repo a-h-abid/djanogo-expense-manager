@@ -1,5 +1,41 @@
 {% extends "frontend/layout.html" %}
 
+{% block title %}
+    {{ form_mode | title }} Account
+{% endblock %}
+
 {% block content %}
-    <h1>Account Form Page</h1>
+    
+    <h1>{{ form_mode | title }} Account</h1>
+    
+    <form method="POST" action="{{ post_url }}">
+        
+        {% csrf_token %}
+        
+        <div class="form-group">
+            <label for="name">Account Name</label>
+            <input type="text" id="name" name="name" />
+        </div>
+        
+        <div class="form-group">
+            <label for="description">Description</label>
+            <input type="text" id="description" name="description" />
+        </div>
+        
+        <div class="form-group">
+            <label for="starting_amount">Starting Amount</label>
+            <input type="text" id="starting_amount" name="starting_amount" />
+        </div>
+        
+        <div class="form-group">
+            <label for="currency">Currency</label>
+            <input type="text" id="currency" name="currency" />
+        </div>
+        
+        <div class="form-group">
+            <input type="submit" value="Save"/>
+        </div>
+        
+    </form>
+    
 {% endblock %}

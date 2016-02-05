@@ -14,7 +14,7 @@ urlpatterns = [
     url(r'^(?P<account_id>[0-9]+)/$', views.detail, name='detail'),
     
     # Edit Existing Account
-    url(r'^(?P<account_id>[0-9]+)/edit/$', views.create, name='edit'),
+    url(r'^(?P<account_id>[0-9]+)/edit/$', views.edit, name='edit'),
     
     # List Transactions
     url(r'^(?P<account_id>[0-9]+)/transaction/$', views.list_transaction, name='list_transaction'),
