@@ -16,7 +16,7 @@
         <tbody>
             {% for transaction in account.transactions %}
             <tr>
-                <td>{{ transaction.created_on | date:"F" }}</td>
+                <td>{{ transaction.created_on | date:"Y-m-d" }}</td>
                 <td>{{ transaction.type_format }}</td>
                 <td>{{ account.currency }} {{ transaction.amount }}</td>
                 <td>{{ transaction.description }}</td>
