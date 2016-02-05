@@ -15,8 +15,8 @@ def app_login(request):
     user = authenticate(username=request.POST['username'], password=request.POST['password'])
     if user is not None and user.is_active:
         login(request, user)
-    else:
-        messages.add_message(request, messages.ERROR, "The username and password were incorrect.")
+    #else:
+        #messages.add_message(request, messages.ERROR, "The username and password were incorrect.")
     
     return redirect('home')
     
